@@ -1,1 +1,1 @@
-Put images here (jpg, jpeg, png)
+Put images here (jpg, jpeg)

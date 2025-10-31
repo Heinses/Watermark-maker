@@ -18,7 +18,7 @@ def calc_watermark_size(image, watermark):
         return (int(watermark_size_y), int(watermark_size_y * watermark_ratio))
 
 def main():
-    supported_file_types = ["jpg", "jpeg", "png"]
+    supported_file_types = ["jpg", "jpeg"]
     watermark = Image.open("watermark.png")
     input_dir = "input"
     output_dir = "output"
@@ -37,6 +37,6 @@ def main():
         y = image.size[1] - watermark_resized.size[1]
         print(f"y: {y}")
         image.paste(watermark_resized, (0, y), watermark_resized)
-        image.save(f"{output_dir}/{filename}")
+        image.save(f"{output_dir}/{filename}", format="JPEG", quality=100, dpi=[300, 300])
 
 main()
